@@ -1,0 +1,12 @@
+@import '~tailwindcss/base.css';
+@import '~tailwindcss/components.css';
+@import '~tailwindcss/utilities.css';
+@import "fonts";
+
+body {
+  @apply text-black;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+}

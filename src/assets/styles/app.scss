@@ -16,13 +16,14 @@ body {
 }
 
 .btn {
-  @apply transition rounded-full cursor-pointer inline-block px-10 py-3 text-center tracking-wide;
+  @apply transition cursor-pointer inline-block px-10 py-3 text-center tracking-wide;
 
   &:focus {
     outline: none;
   }
 
   &--gradient {
+    @apply rounded-full;
     background: linear-gradient(to left, #62a387 0%, #35cc74 50%, #62a387 100%);
     background-size: 400px 100px;
 
@@ -30,9 +31,48 @@ body {
       background-position: -150px 0;
     }
   }
+
+  &--green {
+    @apply bg-green-600 uppercase;
+
+    &:hover {
+      @apply bg-green-500;
+    }
+  }
+
+  &[disabled] {
+    @apply opacity-25 pointer-events-none text-gray-400;
+  }
 }
 
 .gradient {
   @apply absolute w-full h-screen opacity-75;
   background: linear-gradient(to top, rgb(88, 180, 144) 0%, rgb(29, 74, 112) 40%);
+}
+
+div:focus {
+  @apply outline-none;
+}
+
+input {
+  @apply border border-gray-400 px-4 py-2 text-black;
+
+  &:focus {
+    @apply outline-none border-green-500;
+  }
+
+  &[type=number]::-webkit-inner-spin-button,
+  &[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.currency {
+  @apply relative;
+  &:before {
+    content: '€';
+    top: calc(50% - 15px);
+    @apply absolute text-black uppercase text-xl right-0 mr-2;
+  }
 }

@@ -10,3 +10,29 @@ body {
   font-size: 16px;
   overflow-x: hidden;
 }
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn {
+  @apply transition rounded-full cursor-pointer inline-block px-10 py-3 text-center tracking-wide;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--gradient {
+    background: linear-gradient(to left, #62a387 0%, #35cc74 50%, #62a387 100%);
+    background-size: 400px 100px;
+
+    &:hover {
+      background-position: -150px 0;
+    }
+  }
+}
+
+.gradient {
+  @apply absolute w-full h-screen opacity-75;
+  background: linear-gradient(to top, rgb(88, 180, 144) 0%, rgb(29, 74, 112) 40%);
+}

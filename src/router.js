@@ -18,5 +18,19 @@ export default new Router({
       name: 'calc',
       component: () => import(/* webpackChunkName: "calc" */ './views/Calc.vue'),
     },
+    {
+      path: '/results',
+      name: 'results',
+      component: () => import(/* webpackChunkName: "results" */ './views/Results.vue'),
+    },
+    {
+      path: '/results/:extended',
+      name: 'extended',
+      component: () => import(/* webpackChunkName: "extended" */ './views/Results.vue'),
+    },
+    {
+      path: '*',
+      redirect: '/',
+    },
   ],
 });

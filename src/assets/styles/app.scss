@@ -15,6 +15,14 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.tippy {
+  @apply cursor-pointer text-xs text-black bg-green-500 w-4 h-4 ml-2 rounded-full flex justify-center items-center;
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
 .btn {
   @apply transition cursor-pointer inline-block px-10 py-3 text-center tracking-wide;
 
@@ -33,15 +41,52 @@ body {
   }
 
   &--green {
-    @apply bg-green-600 uppercase;
+    @apply bg-green-600 uppercase p-2 pl-3 flex items-center justify-center;
 
     &:hover {
       @apply bg-green-500;
+    }
+
+    .arrow {
+      line-height: 22px;
+      @apply bg-white text-4xl w-8 h-8 inline-block text-green-500 ml-4;
+    }
+  }
+
+  &--green-light {
+    @apply text-green-300 uppercase;
+
+    &:hover {
+      @apply text-green-200;
+    }
+  }
+
+  &--red {
+    @apply text-red-600 uppercase mx-4;
+
+    &:hover {
+      @apply text-red-500;
     }
   }
 
   &[disabled] {
     @apply opacity-25 pointer-events-none text-gray-400;
+  }
+}
+
+.roi-table {
+  @apply w-full text-center;
+
+  tr {
+    @apply border-b;
+
+    td, th {
+      @apply py-4 px-4;
+
+      &:nth-child(1) {
+        @apply text-left;
+      }
+    }
   }
 }
 
@@ -74,5 +119,22 @@ input {
     content: '€';
     top: calc(50% - 15px);
     @apply absolute text-black uppercase text-xl right-0 mr-2;
+  }
+}
+
+.spinner {
+  @apply relative w-16 h-16 border-4 border-green-500 rounded-full;
+  animation: spinner infinite .75s cubic-bezier(0.07, 0.6, 1, 0.24);
+  border-top-color: rgba(0, 0, 0, .1);
+  border-right-color: rgba(0, 0, 0, .1);
+  border-bottom-color: rgba(0, 0, 0, .1);
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

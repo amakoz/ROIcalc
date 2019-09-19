@@ -70,11 +70,14 @@
       validateStep() {
         this.$refs.questions.$validator.validate().then(result => {
           if (!result) {
-//            errors
+            this.$notify({
+              type: 'error',
+              group: 'errors',
+              text: this.errors.items[0].msg,
+            });
             return null;
           }
           else {
-//            success
             if (this.isNotLastStep) {
               this.increaseStep();
               return;

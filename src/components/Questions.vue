@@ -25,6 +25,7 @@
                     <input type="number"
                            :name="question.name"
                            :id="question.name"
+                           placeholder="..."
                            v-validate="'required|min_value:1'"
                            :class="[question.currency ? 'text-right px-8' : 'text-center']"
                            v-model.number="answers[question.name]"

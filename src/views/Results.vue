@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center container py-8">
         <div v-if="loading" class="spinner"></div>
         <div v-else-if="formData === null">
             <router-link class="btn btn--gradient" to="calc" tag="button">Fill the form</router-link>

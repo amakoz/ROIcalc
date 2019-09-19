@@ -75,23 +75,27 @@ body {
 }
 
 .roi-table {
-  @apply w-full text-center;
+  @apply w-full text-center block overflow-auto;
 
   tr {
     @apply border-b;
 
     td, th {
-      @apply py-4 px-4;
+      @apply py-4 px-4 whitespace-no-wrap;
 
       &:nth-child(1) {
         @apply text-left;
       }
     }
   }
+
+  @screen sm {
+    @apply table;
+  }
 }
 
 .gradient {
-  @apply absolute w-full h-screen opacity-75;
+  @apply absolute w-full top-0 bottom-0 opacity-75;
   background: linear-gradient(to top, rgb(88, 180, 144) 0%, rgb(29, 74, 112) 40%);
 }
 

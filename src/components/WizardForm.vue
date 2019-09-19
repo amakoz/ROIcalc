@@ -1,12 +1,12 @@
 <template>
-    <div class="flex items-center justify-center flex-col"
+    <div class="flex items-center justify-center flex-col container"
          tabindex="0"
          @keyup.left.prevent="prevPage"
          @keyup.right.prevent="nextPage">
 
         <Questions v-model="form" ref="questions"></Questions>
 
-        <div class="flex items-center justify-center">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-center py-6 md:py-0">
             <button class="btn btn--red"
                     @click="prevPage"
                     :disabled="step <= 1">

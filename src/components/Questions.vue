@@ -1,5 +1,5 @@
 <template>
-    <div class="h-48 text-center relative">
+    <div class="md:h-48 text-center relative">
         <template v-for="(question, index) in questions" v-if="index + 1 === step">
 
             <h2 class="text-2xl mb-6 max-w-lg">{{ question.title }}</h2>

@@ -89,7 +89,7 @@
 
       submitUpdate() {
         localStorage.setItem('roicalc', JSON.stringify(this.form));
-        this.$router.push({ path: 'results' });
+        this.$router.push({path: 'results'});
       },
     },
   };

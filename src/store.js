@@ -48,6 +48,9 @@ export default new Vuex.Store({
     increaseStep(state) {
       state.step += 1;
     },
+    setStep(state, step) {
+      state.step = step;
+    },
     setResult(state, data) {
       state.result = data;
     },
@@ -72,6 +75,10 @@ export default new Vuex.Store({
 
     resetApp({commit}) {
       commit('resetApp');
+    },
+
+    setStep({commit}, step) {
+      commit('setStep', step);
     },
 
     async getResult({commit}, payload) {

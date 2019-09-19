@@ -51,14 +51,27 @@ export default new Vuex.Store({
     setResult(state, data) {
       state.result = data;
     },
+    resetApp(state) {
+      state.step = 1;
+      state.form = {
+        quality: 'High',
+        tickets: null,
+        charge: null,
+      };
+      localStorage.removeItem('roicalc');
+    },
   },
   actions: {
-    async decreaseStep({commit}) {
+    decreaseStep({commit}) {
       commit('decreaseStep');
     },
 
-    async increaseStep({commit}) {
+    increaseStep({commit}) {
       commit('increaseStep');
+    },
+
+    resetApp({commit}) {
+      commit('resetApp');
     },
 
     async getResult({commit}, payload) {
@@ -73,13 +86,13 @@ export default new Vuex.Store({
         },
         siteMaintance: {
           title: 'Costs',
-          first: getRand(500000,800000),
-          second: getRand(800000,1000000),
+          first: getRand(500000, 800000),
+          second: getRand(800000, 1000000),
         },
         recording: {
           title: 'Profits',
-          first: getRand(10000000,12000000),
-          second: getRand(12000000,14000000),
+          first: getRand(10000000, 12000000),
+          second: getRand(12000000, 14000000),
         },
       };
 

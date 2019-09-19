@@ -12,7 +12,17 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex';
+
   export default {
     name: 'home',
+
+    methods: {
+      ...mapActions(['resetApp']),
+    },
+
+    mounted() {
+      this.resetApp();
+    }
   };
 </script>
